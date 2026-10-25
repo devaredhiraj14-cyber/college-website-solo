@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Departments | SSBT's Arts, Commerce & Science College, Bambhori</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-ticker">
+        <span class="ticker-label"><i class="fa-solid fa-bullhorn"></i> Academics</span>
+        <div class="ticker-text">
+          Admissions Open for BCA, BBA, B.Sc. Computer Science & B.Sc. Data Science (Academic Year 2026-27) • Affiliated to KBCNMU Jalgaon.
+        </div>
+      </div>
+      <div class="top-quick-links">
+        <a href="compliance.html" class="helpline-pill"><i class="fa-solid fa-shield-halved"></i> Anti-Ragging: 1800-180-5522</a>
+        <a href="contact.html"><i class="fa-solid fa-location-dot"></i> Bambhori, Jalgaon</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <div class="brand-wrapper">
+        <a href="index.html">
+          <img src="https://ssacscjalgaon.ac.in/public/images/logo.png" alt="SSBT Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/76?text=SSBT'">
+        </a>
+        <div class="brand-text">
+          <h1>SHRAM SADHANA BOMBAY TRUST'S</h1>
+          <h2>ARTS, COMMERCE & SCIENCE COLLEGE</h2>
+          <p>Bambhori, Post Box No. 94, Jalgaon - 425001 (M.S.) | Affiliated to KBC North Maharashtra University</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <div class="badge-item">
+          <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
+          <div><span>DTE Code</span><strong>5125</strong></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <button class="mobile-toggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <div class="nav-links">
+        <div class="nav-item"><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link"><i class="fa-solid fa-landmark"></i> About Us</a></div>
+        <div class="nav-item"><a href="departments.html" class="nav-link active"><i class="fa-solid fa-microchip"></i> Departments</a></div>
+        <div class="nav-item"><a href="events.html" class="nav-link"><i class="fa-solid fa-champagne-glasses"></i> Campus Life & Fests</a></div>
+        <div class="nav-item"><a href="admissions.html" class="nav-link"><i class="fa-solid fa-user-graduate"></i> Admissions 2026-27</a></div>
+        <div class="nav-item"><a href="placements.html" class="nav-link"><i class="fa-solid fa-briefcase"></i> Placements</a></div>
+        <div class="nav-item"><a href="compliance.html" class="nav-link"><i class="fa-solid fa-scale-balanced"></i> Statutory & IQAC</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact Us</a></div>
+      </div>
+      <a href="admissions.html" class="btn nav-cta-btn"><i class="fa-solid fa-graduation-cap"></i> Apply 2026</a>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <div class="page-banner">
+    <div class="container">
+      <span class="section-tag" style="background: rgba(251, 191, 36, 0.2); color: #fde68a;">Industry-Aligned Curriculum</span>
+      <h1>Academic Departments</h1>
+      <p>Explore undergraduate degree programs with high-performance computing laboratories, doctoral faculty, and hands-on capstone projects.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <span>/</span> <span>Departments</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Departments Dynamic Showcase -->
+  <section class="section-padding" style="background: #ffffff;">
+    <div class="container">
+      <div class="dept-nav-pills">
+        <button class="dept-pill-btn active" data-dept="bca"><i class="fa-solid fa-laptop-code"></i> BCA (Computer Applications)</button>
+        <button class="dept-pill-btn" data-dept="bba"><i class="fa-solid fa-chart-line"></i> BBA (Business Administration)</button>
+        <button class="dept-pill-btn" data-dept="bsc-cs"><i class="fa-solid fa-microchip"></i> B.Sc. Computer Science</button>
+        <button class="dept-pill-btn" data-dept="bsc-ds"><i class="fa-solid fa-brain"></i> B.Sc. Data Science</button>
+      </div>
+
+      <div id="dept-dynamic-container" class="dept-detail-container">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Master Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>SSBT ACS College</h4>
+        <p>Founded under the patronship of Hon'ble Former President of India Smt. Pratibha Devisingh Patil. Affiliated to KBC North Maharashtra University.</p>
+        <p style="font-size: 0.82rem; color: #94a3b8;"><strong>DTE: 5125 | AISHE: C-8924</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Programmes</h4>
+        <div class="footer-links">
+          <a href="departments.html" onclick="initDepartmentView('bca')">BCA Program</a>
+          <a href="departments.html" onclick="initDepartmentView('bba')">BBA Program</a>
+          <a href="departments.html" onclick="initDepartmentView('bsc-cs')">B.Sc. Computer Science</a>
+          <a href="departments.html" onclick="initDepartmentView('bsc-ds')">B.Sc. Data Science</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Statutory Cells</h4>
+        <div class="footer-links">
+          <a href="compliance.html#anti-ragging">Anti-Ragging Squad (1800-180-5522)</a>
+          <a href="compliance.html#icc">ICC / Women's Cell</a>
+          <a href="compliance.html#grievance">Grievance Redressal</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-links">
+          <a href="contact.html">Campus Address</a>
+          <a href="tel:02572258391">0257-2258391 / 93</a>
+          <a href="mailto:sscoetjal@gmail.com">sscoetjal@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Shram Sadhana Bombay Trust's Arts, Commerce & Science College, Bambhori, Jalgaon.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Handle URL parameters like ?dept=bba
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const requestedDept = urlParams.get('dept');
+      if (requestedDept && COLLEGE_DATA.departments[requestedDept]) {
+        document.querySelectorAll('.dept-pill-btn').forEach(b => b.classList.remove('active'));
+        const activeBtn = document.querySelector(`.dept-pill-btn[data-dept="${requestedDept}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+        initDepartmentView(requestedDept);
+      }
+    });
+  </script>
+</body>
+</html>
