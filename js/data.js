@@ -14,7 +14,7 @@ const COLLEGE_DATA = {
     affiliation: "Affiliated to Kavayitri Bahinabai Chaudhari North Maharashtra University, Jalgaon",
     approvedBy: "Govt. of Maharashtra & Higher Education Dept.",
     dteCode: "DTE Code: 5125 | AISHE: C-8924",
-    logoUrl: "https://ssacscjalgaon.ac.in/public/images/logo.png"
+    logoUrl: "https://sscoetjalgaon.ac.in/public/images/home-page/new-logos/ssacsc.png"
   },
 
   notices: [
