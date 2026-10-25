@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------------
-   1. Mobile Menu Toggle
+   1. Mobile Menu Toggle & Mobile Dropdowns
    -------------------------------------------------------------------------- */
 function initMobileMenu() {
   const toggleBtn = document.querySelector('.mobile-toggle');
@@ -30,9 +30,35 @@ function initMobileMenu() {
       }
     });
 
-    // Close menu when a link is clicked
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    // Support mobile click-to-expand for dropdown menus
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      const parentItem = link.closest('.nav-item');
+      const dropdown = parentItem ? parentItem.querySelector('.nav-dropdown') : null;
+
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && dropdown) {
+          e.preventDefault();
+          dropdown.classList.toggle('dropdown-open');
+          const chevron = link.querySelector('.fa-chevron-down');
+          if (chevron) {
+            chevron.style.transform = dropdown.classList.contains('dropdown-open') ? 'rotate(180deg)' : 'none';
+          }
+          return;
+        }
+
+        // Close menu when a standard page link is clicked
+        navLinks.classList.remove('mobile-open');
+        const icon = toggleBtn.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-xmark');
+        }
+      });
+    });
+
+    // Close menu when clicking items inside dropdowns
+    navLinks.querySelectorAll('.nav-dropdown a').forEach(subLink => {
+      subLink.addEventListener('click', () => {
         navLinks.classList.remove('mobile-open');
         const icon = toggleBtn.querySelector('i');
         if (icon) {
@@ -56,7 +82,7 @@ function initDepartmentView(deptKey) {
   if (!container) return;
 
   container.innerHTML = `
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 20px; margin-bottom: 30px;">
+    <div class="dept-header-flex">
       <div>
         <span class="section-tag" style="background: var(--accent-gold-light); color: var(--accent-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 20px;">
           ${dept.short} PROGRAMME
@@ -64,7 +90,7 @@ function initDepartmentView(deptKey) {
         <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--royal-navy); margin-top: 6px;">${dept.name}</h3>
         <p style="color: var(--text-light); font-size: 0.95rem;">${dept.tagline}</p>
       </div>
-      <div style="display: flex; gap: 15px;">
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
         <span style="background: #f1f5f9; color: var(--royal-navy); font-weight: 700; font-size: 0.85rem; padding: 6px 14px; border-radius: 20px;">
           <i class="fa-solid fa-clock"></i> ${dept.duration}
         </span>
@@ -74,7 +100,7 @@ function initDepartmentView(deptKey) {
       </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 35px;">
+    <div class="dept-content-grid">
       <!-- Left Column -->
       <div>
         <div style="margin-bottom: 25px;">
