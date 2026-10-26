@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SSBT's Arts, Commerce & Science College, Bambhori, Jalgaon | Official Portal</title>
   
-  <!-- Font Awesome 6 Icons -->
+  <!-- Icons: Font Awesome 6 & Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -134,325 +135,401 @@
     </div>
   </nav>
 
-  <!-- ======================================================================
-       4. Grand Homepage Hero (Center of Attraction with Dynamic Stats)
-       ====================================================================== -->
-  <section class="grand-hero">
-    <div class="container">
-      <div class="grand-hero-content">
-        <span class="grand-hero-tag"><i class="fa-solid fa-graduation-cap"></i> Admissions Open 2026-27 • BCA | BBA | B.Sc. CS & Data Science</span>
-        <h1>A Premier Legacy of <span>Excellence, Culture & Innovation</span></h1>
-        <p>
-          Founded under the visionary patronage of India's First Woman President, <strong>Smt. Pratibha Devisingh Patil</strong>, Shram Sadhana Bombay Trust's Arts, Commerce & Science College provides career-accelerating undergraduate degrees, cutting-edge computing laboratories, and high-energy national fests on a 25-acre green campus.
-        </p>
+  <main>
+    <!-- ======================================================================
+         4. Hero Section
+         ====================================================================== -->
+    <section class="hero" id="home">
+      <div class="hero-image" role="img" aria-label="SSBT College campus and students"></div>
+      <div class="hero-shade"></div>
+      <div class="container hero-content">
+        <div class="eyebrow eyebrow-light"><span></span> SHRAM SADHANA BOMBAY TRUST SANCHALIT</div>
+        <h1>Where curiosity<br>becomes <em>possibility.</em></h1>
+        <p>A premier institution dedicated to academic excellence, value-based higher education, and corporate career readiness in Arts, Commerce, Science, Computer Applications and Management.</p>
         <div class="hero-actions">
-          <button class="btn btn-gold open-enquiry-modal">
-            <i class="fa-solid fa-paper-plane"></i> Apply for Admission 2026
-          </button>
-          <a href="events.html" class="btn btn-glass">
-            <i class="fa-solid fa-masks-theater"></i> Dedicated Events & Fests
-          </a>
-          <a href="departments.html" class="btn btn-glass">
-            <i class="fa-solid fa-microchip"></i> Academic Programmes
-          </a>
+          <a class="button button-gold" href="departments.html">Explore Programmes <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <button class="button button-outline-light open-enquiry-modal"><i class="fa-solid fa-graduation-cap"></i> Admissions 2026-27</button>
+          <a class="button button-outline-light" href="placements.html">Placement Records <i class="fa-solid fa-briefcase"></i></a>
         </div>
+        <div class="hero-note">
+          <span class="note-line"></span>
+          <span>BAMBHORI, JALGAON &bull; AFFILIATED TO KBCNMU &bull; NAAC ACCREDITED</span>
+        </div>
+      </div>
+      <a class="hero-scroll" href="#welcome" aria-label="Scroll to discover"><i class="fa-solid fa-arrow-down"></i></a>
+    </section>
 
-        <!-- Embedded Center of Attraction Stats -->
-        <div class="hero-stats-strip">
-          <div class="hero-stat-item">
-            <strong id="live-stat-highest-pkg">12.0 LPA</strong>
-            <span>Highest Package</span>
+    <!-- ======================================================================
+         5. Key Highlights / Stats Banner Strip
+         ====================================================================== -->
+    <section class="stats-banner" aria-label="College Key Statistics">
+      <div class="container stats-banner-grid">
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="stat-number">1983</div>
+          <div class="stat-title">Trust Foundation</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="stat-number">'B' Grade</div>
+          <div class="stat-title">NAAC Accredited</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <div class="stat-number" id="live-stat-students">1000+</div>
+          <div class="stat-title">Students Placed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="stat-number" id="live-stat-highest-pkg">12.0 LPA</div>
+          <div class="stat-title">Highest Package</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. Welcome / Heritage & Vision (Section 01 - Reduced President Patil Info)
+         ====================================================================== -->
+    <section class="welcome section-pad" id="welcome">
+      <div class="container welcome-grid">
+        <div class="welcome-side">
+          <div class="eyebrow">WELCOME TO SSBT</div>
+          <div class="welcome-number">01 <span>/ Heritage &amp; Vision</span></div>
+          <div class="welcome-accent"></div>
+        </div>
+        <div class="welcome-main" id="about-intro">
+          <h2>Education is more than a destination. <em>It is a journey.</em></h2>
+          <p class="lead">At SSBT's Arts, Commerce &amp; Science College, learning empowers students with analytical thinking, ethical values, and industry-demanded skills.</p>
+          <p>Established under the visionary patronage of Smt. Pratibhatai Patil (Former President of India), Shram Sadhana Bombay Trust (SSBT) has been a beacon of transformative higher education in Maharashtra. Our campus provides spacious digital classrooms, state-of-the-art computer labs, and comprehensive placement support.</p>
+          <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
+            <a class="button button-small button-gold" href="about.html">About SSBT College <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a class="text-link" href="departments.html">View All Departments <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-          <div class="hero-stat-item">
-            <strong>100%</strong>
-            <span>Placement Guidance</span>
-          </div>
-          <div class="hero-stat-item">
-            <strong id="live-stat-acres">25 Acres</strong>
-            <span>Lush Green Campus</span>
-          </div>
-          <div class="hero-stat-item">
-            <strong>Grade 'A'</strong>
-            <span>KBCNMU Affiliation</span>
+        </div>
+        <div class="welcome-photo">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85" alt="SSBT College Campus Building" loading="lazy">
+          <div class="photo-caption">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>
+              <strong>A Community of Learners</strong>
+              <small>Knowledge, Opportunity &amp; Growth</small>
+            </span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================================================================
-       5. Special Tribute Section: Smt. Pratibha Devisingh Patil
-       ====================================================================== -->
-  <section class="presidential-tribute-section">
-    <div class="container">
-      <div class="tribute-card" id="pratibha-patil">
-        <div class="tribute-image-wrapper">
-          <img src="./tai photo.jpeg" 
-               alt="Smt. Pratibha Devisingh Patil" 
-               class="tribute-img"
-               onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Pratibha_Patil_2011_%28cropped%29.jpg/440px-Pratibha_Patil_2011_%28cropped%29.jpg'">
-          <div class="tribute-badge"><i class="fa-solid fa-certificate"></i> Chief Patron & Founder</div>
-        </div>
-
-        <div class="tribute-content">
-          <span class="tribute-designation">Our Inspiring Guiding Light</span>
-          <h3>Smt. Pratibha Devisingh Patil</h3>
-          <p style="font-size: 1.05rem; font-weight: 700; color: var(--royal-navy); margin-bottom: 6px;">
-            Former President of India (12th President & First Woman to Hold Office)
-          </p>
-          <p class="tribute-quote">
-            "Education is the supreme catalyst to empower rural youth, elevate women, and build a progressive nation."
-          </p>
-          <p style="font-size: 0.92rem; color: var(--text-main); margin-bottom: 16px; line-height: 1.6;">
-            Founder Patron of SSBT (Est. 1983). Dedicated to transforming rural youth through high-caliber higher education, technological empowerment, and holistic nation-building across North Maharashtra.
-          </p>
-          <div class="tribute-points">
-            <div class="tribute-point"><i class="fa-solid fa-circle-check"></i> Founded SSBT Trust in 1983</div>
-            <div class="tribute-point"><i class="fa-solid fa-circle-check"></i> 12th President of India</div>
-            <div class="tribute-point"><i class="fa-solid fa-circle-check"></i> Pioneer of Rural & Women Empowerment</div>
-            <div class="tribute-point"><i class="fa-solid fa-circle-check"></i> 25-Acre Sprawling Academic Legacy</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================================
-       6. Principal's Profile & Desk
-       ====================================================================== -->
-  <section class="principal-section" id="principal-desk">
-    <div class="container principal-grid">
-      <div class="principal-text">
-        <span class="section-tag"><i class="fa-solid fa-user-graduate"></i> Academic Visionary</span>
-        <h3>From the Principal's Desk</h3>
-        <span class="principal-title">Dr. G. K. Patnaik — Principal, Ph.D. (Computer Science & Engg.)</span>
-        <p class="principal-bio">
-          "Welcome to SSBT's Arts, Commerce & Science College, Bambhori, Jalgaon. Our institution is dedicated to creating a vibrant academic atmosphere where academic rigour meets real-world application. We take immense pride not only in our state-of-the-art computer labs and high placement records, but also in our vibrant campus culture — from mega national technical fests like <em>MILESTONE</em> to cultural celebrations like <em>VASANTOTSAV</em>. We nurture our students to become confident, ethical, and industry-ready leaders."
-        </p>
-        <div class="principal-stats">
-          <div class="p-stat">
-            <strong>28+</strong>
-            <span>Years in Education</span>
-          </div>
-          <div class="p-stat">
-            <strong>65+</strong>
-            <span>Research Publications</span>
-          </div>
-          <div class="p-stat">
-            <strong>100%</strong>
-            <span>Student Support Focus</span>
-          </div>
-        </div>
-        <div style="margin-top: 25px;">
-          <a href="about.html#principal-desk" class="btn btn-gold" style="font-size: 0.88rem; padding: 10px 20px;">
-            <i class="fa-solid fa-book-open-reader"></i> Read Full Message & Vision
-          </a>
-          <a href="contact.html" class="btn btn-glass" style="color: var(--royal-navy); border-color: var(--primary-red); font-size: 0.88rem; padding: 10px 20px; margin-left: 10px;">
-            <i class="fa-solid fa-envelope"></i> Connect With Principal's Office
-          </a>
-        </div>
-      </div>
-
-      <div class="principal-card-box">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" 
-             alt="Dr. G. K. Patnaik, Principal" 
-             class="principal-photo">
-        <h4 style="font-size: 1.15rem; color: var(--royal-navy); margin-bottom: 2px;">Dr. G. K. Patnaik</h4>
-        <p style="font-size: 0.82rem; color: var(--primary-red); font-weight: 700;">Principal & Professor</p>
-        <p style="font-size: 0.78rem; color: var(--text-light); margin-top: 4px;">SSBT's Arts, Commerce & Science College, Bambhori</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================================
-       7. Campus Life & Dedicated Events Spotlight
-       ====================================================================== -->
-  <section class="section-padding" style="background: #ffffff;">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-fire"></i> Life at SSBT</span>
-        <h2>Grand Fests & Campus Celebrations</h2>
-        <p>Experience our iconic national technical symposia, multi-day cultural carnivals, and athletic championships!</p>
-      </div>
-
-      <div class="fest-grid">
-        <!-- Fest 1: MILESTONE -->
-        <div class="fest-card">
-          <div class="fest-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Tech Fest MILESTONE" class="fest-img">
-            <span class="fest-badge"><i class="fa-solid fa-code"></i> National Tech Symposium</span>
-          </div>
-          <div class="fest-body">
-            <h3>"MILESTONE" Tech Fest</h3>
-            <p>
-              North Maharashtra's premier national technical carnival. Attracting 3,000+ coders and innovators for 24H Hackathons, Robo-Races, and Paper Presentations.
-            </p>
-            <div class="fest-highlights">
-              <span class="fest-pill">₹1,50,000+ Cash Pool</span>
-              <span class="fest-pill">Robo Arena</span>
-              <span class="fest-pill">24H Hackathon</span>
-            </div>
-            <a href="events.html#milestone" class="btn btn-gold" style="padding: 8px 16px; font-size: 0.85rem; justify-content: center;">
-              <i class="fa-solid fa-arrow-right"></i> Explore Event Rules
-            </a>
-          </div>
-        </div>
-
-        <!-- Fest 2: VASANTOTSAV -->
-        <div class="fest-card">
-          <div class="fest-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Cultural Fest VASANTOTSAV" class="fest-img">
-            <span class="fest-badge" style="background: rgba(180, 83, 9, 0.9);"><i class="fa-solid fa-music"></i> Mega Cultural Gala</span>
-          </div>
-          <div class="fest-body">
-            <h3>"VASANTOTSAV" Gathering</h3>
-            <p>
-              A 3-day multi-cultural celebration with celebrity musical concerts, classical Lavani/Powada showdowns, fashion pageants, and high-voltage DJ nights.
-            </p>
-            <div class="fest-highlights">
-              <span class="fest-pill">Celebrity Concert</span>
-              <span class="fest-pill">DJ Night</span>
-              <span class="fest-pill">Dance Battles</span>
-            </div>
-            <a href="events.html#vasantotsav" class="btn btn-gold" style="padding: 8px 16px; font-size: 0.85rem; justify-content: center;">
-              <i class="fa-solid fa-arrow-right"></i> Explore Cultural Nights
-            </a>
-          </div>
-        </div>
-
-        <!-- Fest 3: KHEL-MAHOTSAV -->
-        <div class="fest-card">
-          <div class="fest-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Sports Meet Khel-Mahotsav" class="fest-img">
-            <span class="fest-badge" style="background: rgba(16, 185, 129, 0.9);"><i class="fa-solid fa-trophy"></i> Annual Sports Meet</span>
-          </div>
-          <div class="fest-body">
-            <h3>"KHEL-MAHOTSAV" Sports Gala</h3>
-            <p>
-              Inter-departmental championships on our 25-acre grounds: floodlight Cricket leagues, Volleyball tournaments, Football, Athletics, and Indoor Chess.
-            </p>
-            <div class="fest-highlights">
-              <span class="fest-pill">Floodlight Cricket</span>
-              <span class="fest-pill">Athletic Tracks</span>
-              <span class="fest-pill">Indoor Gymkhana</span>
-            </div>
-            <a href="events.html#sports" class="btn btn-gold" style="padding: 8px 16px; font-size: 0.85rem; justify-content: center;">
-              <i class="fa-solid fa-arrow-right"></i> Explore Sports Arena
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Spotlight link to Dedicated Events Page -->
-      <div style="text-align: center; margin-top: 40px; background: #fdf8f6; border: 2px dashed #fed7aa; border-radius: var(--radius-md); padding: 25px;">
-        <h4 style="font-size: 1.25rem; color: var(--royal-navy); margin-bottom: 8px;">Looking for Full Schedules, Registration Passes & Photo Gallery?</h4>
-        <p style="color: var(--text-light); font-size: 0.92rem; margin-bottom: 18px;">Visit our dedicated Events Portal to register online for upcoming fests and view gallery archives.</p>
-        <a href="events.html" class="btn btn-gold" style="padding: 12px 28px; font-size: 0.95rem;">
-          <i class="fa-solid fa-calendar-star"></i> Open Dedicated Events & Fests Portal
+    <!-- ======================================================================
+         7. Quick Access Strip
+         ====================================================================== -->
+    <section class="quick-strip" aria-label="Quick links">
+      <div class="container quick-grid">
+        <a href="departments.html">
+          <span class="quick-icon"><i class="fa-solid fa-microchip"></i></span>
+          <span><small>EXPLORE</small><strong>Academic Departments</strong></span>
+          <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </a>
+        <a href="admissions.html">
+          <span class="quick-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+          <span><small>JOIN US</small><strong>Admissions 2026-27</strong></span>
+          <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </a>
+        <a href="placements.html">
+          <span class="quick-icon"><i class="fa-solid fa-briefcase"></i></span>
+          <span><small>CAREERS</small><strong>Training &amp; Placements</strong></span>
+          <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </a>
+        <a href="events.html">
+          <span class="quick-icon"><i class="fa-solid fa-champagne-glasses"></i></span>
+          <span><small>CAMPUS LIFE</small><strong>Dedicated Events &amp; Fests</strong></span>
+          <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================================================================
-       8. Big Campus Infrastructure Grandeur
-       ====================================================================== -->
-  <section class="section-padding" style="background: #f8fafc; border-top: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-building"></i> World-Class Amenities</span>
-        <h2>Sprawling 25-Acre Infrastructure</h2>
-        <p>A panoramic green campus on the National Highway at Bambhori, designed for comprehensive intellectual and athletic growth.</p>
+    <!-- ======================================================================
+         8. Academic Programmes Showcase
+         ====================================================================== -->
+    <section class="academics section-pad" id="academics">
+      <div class="container">
+        <div class="section-heading heading-row">
+          <div>
+            <div class="eyebrow">ACADEMIC EXCELLENCE</div>
+            <h2>Choose your path<br>to <em>success.</em></h2>
+          </div>
+          <p>Explore undergraduate programmes designed in accordance with National Education Policy (NEP) and affiliated with Kavayitri Bahinabai Chaudhari North Maharashtra University (KBCNMU).</p>
+        </div>
+
+        <div class="academic-grid">
+          <!-- CARD 1: COMPUTER APPLICATIONS (BCA) -->
+          <article class="academic-card">
+            <div class="academic-art art-commerce">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span>01</span>
+            </div>
+            <div class="academic-body">
+              <p class="card-kicker">TECH &amp; SOFTWARE</p>
+              <h3>B.C.A.</h3>
+              <p>Bachelor of Computer Applications focusing on software development, web technologies, database management, and Python/Java programming.</p>
+              <div style="margin-top: 14px;">
+                <span class="badge-accreditation">3 Years &bull; Full Time &bull; NEP 2020</span>
+              </div>
+              <a href="departments.html?dept=bca" class="text-link">Department Details &amp; Syllabus <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
+          <!-- CARD 2: BUSINESS ADMINISTRATION (BBA) -->
+          <article class="academic-card">
+            <div class="academic-art art-arts">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>02</span>
+            </div>
+            <div class="academic-body">
+              <p class="card-kicker">LEADERSHIP &amp; MANAGEMENT</p>
+              <h3>B.B.A.</h3>
+              <p>Bachelor of Business Administration developing executive acumen in marketing, corporate finance, human resource management, and entrepreneurship.</p>
+              <div style="margin-top: 14px;">
+                <span class="badge-accreditation">3 Years &bull; Full Time &bull; NEP 2020</span>
+              </div>
+              <a href="departments.html?dept=bba" class="text-link">Department Details &amp; Syllabus <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
+          <!-- CARD 3: COMPUTER SCIENCE & DATA SCIENCE -->
+          <article class="academic-card">
+            <div class="academic-art art-science">
+              <i class="fa-solid fa-database"></i>
+              <span>03</span>
+            </div>
+            <div class="academic-body">
+              <p class="card-kicker">ANALYTICS &amp; COMPUTING</p>
+              <h3>B.Sc. Comp. Science</h3>
+              <p>Rigorous undergraduate science programme in algorithm design, data structures, machine learning fundamentals, and modern data computing.</p>
+              <div style="margin-top: 14px;">
+                <span class="badge-accreditation">3 Years &bull; Full Time &bull; NEP 2020</span>
+              </div>
+              <a href="departments.html?dept=bsc-cs" class="text-link">Department Details &amp; Syllabus <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="departments.html" class="button button-gold">View All Department Curriculums <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
+    </section>
 
-      <div class="grandeur-grid">
-        <div class="grandeur-item">
-          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80" alt="Central Library" class="grandeur-img">
-          <div class="grandeur-overlay">
-            <h4>Central Knowledge Library</h4>
-            <p>35,000+ volumes, e-journals, DELNET access, and 500-seat reading hall.</p>
+    <!-- ======================================================================
+         9. Why Choose SSBT (Campus Advantages)
+         ====================================================================== -->
+    <section class="why-section section-pad" id="why-choose-us">
+      <div class="container">
+        <div class="section-heading heading-row">
+          <div>
+            <div class="eyebrow">CAMPUS ADVANTAGES</div>
+            <h2>Why study at <em>SSBT College?</em></h2>
+          </div>
+          <p>Our commitment to student welfare, technical competence, and career readiness distinguishes us as a preferred college in the Khandesh region.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <span><i class="fa-solid fa-desktop"></i></span>
+            <h3>Hi-Tech Computer Labs</h3>
+            <p>Air-conditioned computer laboratories with high-speed optical fiber internet, modern development tools and server infrastructure.</p>
+          </article>
+          <article class="why-card">
+            <span><i class="fa-solid fa-book-bookmark"></i></span>
+            <h3>Comprehensive Library</h3>
+            <p>Thousands of reference books, national/international journals, e-library subscriptions and spacious reading halls.</p>
+          </article>
+          <article class="why-card">
+            <span><i class="fa-solid fa-user-tie"></i></span>
+            <h3>Experienced Faculty</h3>
+            <p>Qualified professors, Ph.D. holders, and dedicated mentors committed to student academic success and personal mentoring.</p>
+          </article>
+          <article class="why-card">
+            <span><i class="fa-solid fa-briefcase"></i></span>
+            <h3>Dedicated Placement Cell</h3>
+            <p>Proactive training in soft skills, quantitative aptitude, mock interviews, and on-campus placement drives under <strong>Prof. Aarti Rana</strong>.</p>
+          </article>
+          <article class="why-card">
+            <span><i class="fa-solid fa-trophy"></i></span>
+            <h3>Sports &amp; NSS Units</h3>
+            <p>Large sports ground, indoor games, active NSS community outreach, and cultural clubs fostering well-rounded personality development.</p>
+          </article>
+          <article class="why-card">
+            <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
+            <h3>MahaDBT Scholarships</h3>
+            <p>Full support for government scholarship schemes, EBC fee concessions, and minority financial aid benefits.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         10. Training & Placements Preview
+         ====================================================================== -->
+    <section class="section-pad" style="background: #ffffff;" id="placement-preview">
+      <div class="container">
+        <div class="section-heading heading-row">
+          <div>
+            <div class="eyebrow">CAREER SUCCESS</div>
+            <h2>Training &amp; <em>Placements.</em></h2>
+          </div>
+          <p>Connecting classroom knowledge with corporate opportunities. Our graduates have made their mark at leading IT and multinational organizations.</p>
+        </div>
+
+        <div class="placement-preview-box">
+          <div class="placement-preview-grid">
+            <div>
+              <span class="badge-accreditation" style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; border-color: rgba(251, 191, 36, 0.4); margin-bottom: 14px;">120+ RECRUITING COMPANIES</span>
+              <h3 style="font-family: var(--serif); font-size: 2rem; color: #ffffff; margin-bottom: 14px; font-weight: 600;">Empowering talent, building careers.</h3>
+              <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.8;">The Training and Placement Cell, headed by <strong>Prof. Aarti Rana</strong>, organizes aptitude workshops, coding bootcamps, and mock interviews from the second year onwards. Leading corporate recruiters regularly conduct campus recruitment drives.</p>
+              <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="placements.html" class="button button-gold">Placement Report &amp; Recruiters <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <button class="button button-outline-light open-enquiry-modal"><i class="fa-solid fa-paper-plane"></i> Apply for Admission</button>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="placement-stat-box">
+                <div class="pkg-number">12.0 LPA</div>
+                <div class="pkg-label">Highest Package</div>
+              </div>
+              <div class="placement-stat-box">
+                <div class="pkg-number">1000+</div>
+                <div class="pkg-label">Students Placed</div>
+              </div>
+              <div class="placement-stat-box">
+                <div class="pkg-number">120+</div>
+                <div class="pkg-label">Corporate Partners</div>
+              </div>
+              <div class="placement-stat-box">
+                <div class="pkg-number" id="live-stat-avg-pkg">4.20 LPA</div>
+                <div class="pkg-label">Average Package</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="grandeur-item">
-          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="AC Auditorium" class="grandeur-img">
-          <div class="grandeur-overlay">
-            <h4>1000-Seater AC Auditorium</h4>
-            <p>Acoustically treated mega hall for international symposiums and guest lectures.</p>
-          </div>
-        </div>
-
-        <div class="grandeur-item">
-          <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=600&q=80" alt="High Tech Labs" class="grandeur-img">
-          <div class="grandeur-overlay">
-            <h4>Advanced Computing Center</h4>
-            <p>High-end Core i7 workstations, GPU AI racks, Gigabit fiber Wi-Fi.</p>
-          </div>
-        </div>
-
-        <div class="grandeur-item">
-          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80" alt="Sports Grounds" class="grandeur-img">
-          <div class="grandeur-overlay">
-            <h4>Olympic-Size Sports Arena</h4>
-            <p>Dedicated cricket pavilion, basketball court, modern gym, and tracks.</p>
-          </div>
+        <div class="recruiter-grid">
+          <div class="recruiter-card"><strong>TCS</strong><span>Tata Consultancy</span></div>
+          <div class="recruiter-card"><strong>Infosys</strong><span>IT Services</span></div>
+          <div class="recruiter-card"><strong>Wipro</strong><span>Technologies</span></div>
+          <div class="recruiter-card"><strong>Tech Mahindra</strong><span>Global Tech</span></div>
+          <div class="recruiter-card"><strong>Capgemini</strong><span>Consulting</span></div>
+          <div class="recruiter-card"><strong>Cognizant</strong><span>Digital Systems</span></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================================================================
-       9. Institutional Stats Counter
-       ====================================================================== -->
-  <section style="background: var(--royal-navy); color: #ffffff; padding: 50px 0;">
-    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center;">
-      <div>
-        <i class="fa-solid fa-tree" style="font-size: 2.2rem; color: #fbbf24; margin-bottom: 10px;"></i>
-        <div style="font-size: 2.6rem; font-weight: 800;">25+ Acres</div>
-        <div style="color: #cbd5e1; font-size: 0.85rem; text-transform: uppercase;">Lush Wi-Fi Green Campus</div>
+    <!-- ======================================================================
+         11. Notices & Announcements
+         ====================================================================== -->
+    <section class="notices section-pad" id="notices">
+      <div class="container">
+        <div class="section-heading heading-row">
+          <div>
+            <div class="eyebrow">THE NOTICEBOARD</div>
+            <h2>Keep up with<br>what's <em>happening.</em></h2>
+          </div>
+          <p>Official notices, examination timetables, holiday circulars, and university communications from KBCNMU.</p>
+        </div>
+        <div class="notice-grid">
+          <article class="notice-card">
+            <div class="notice-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="notice-content">
+              <span class="notice-label">ADMISSIONS 2026-27</span>
+              <h3>Admissions Open for BCA, BBA &amp; B.Sc.</h3>
+              <p>Online pre-registration and document verification for the 2026-27 academic session is actively underway.</p>
+              <a href="admissions.html" class="text-link">Admission Guidelines <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+          <article class="notice-card">
+            <div class="notice-icon"><i class="fa-solid fa-calendar-days"></i></div>
+            <div class="notice-content">
+              <span class="notice-label">CAMPUS LIFE &amp; FESTS</span>
+              <h3>Milestone &amp; Vasantotsav 2026</h3>
+              <p>Annual national technical fest "MILESTONE" and 3-day cultural extravaganza "VASANTOTSAV" schedules released.</p>
+              <a href="events.html" class="text-link">View Events Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+          <article class="notice-card">
+            <div class="notice-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="notice-content">
+              <span class="notice-label">SCHOLARSHIPS</span>
+              <h3>MahaDBT Post-Matric Scholarship</h3>
+              <p>Eligible OBC, SC, ST, and EBC students must verify application documents at the college scholarship counter.</p>
+              <a href="admissions.html" class="text-link">Scholarship Details <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+        </div>
       </div>
-      <div>
-        <i class="fa-solid fa-briefcase" style="font-size: 2.2rem; color: #fbbf24; margin-bottom: 10px;"></i>
-        <div style="font-size: 2.6rem; font-weight: 800;">85%+</div>
-        <div style="color: #cbd5e1; font-size: 0.85rem; text-transform: uppercase;">Consistent Placement Record</div>
-      </div>
-      <div>
-        <i class="fa-solid fa-trophy" style="font-size: 2.2rem; color: #fbbf24; margin-bottom: 10px;"></i>
-        <div style="font-size: 2.6rem; font-weight: 800;">₹7.50 LPA</div>
-        <div style="color: #cbd5e1; font-size: 0.85rem; text-transform: uppercase;">Highest Package Achieved</div>
-      </div>
-      <div>
-        <i class="fa-solid fa-users" style="font-size: 2.2rem; color: #fbbf24; margin-bottom: 10px;"></i>
-        <div style="font-size: 2.6rem; font-weight: 800;">10,000+</div>
-        <div style="color: #cbd5e1; font-size: 0.85rem; text-transform: uppercase;">Proud SSBT Alumni Globally</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================================================================
-       10. Corporate Placement Partners
-       ====================================================================== -->
-  <section class="section-padding" style="background: #ffffff;">
-    <div class="container" style="text-align: center;">
-      <span class="section-tag">Career Horizons</span>
-      <h2 style="font-size: 2rem; color: var(--royal-navy); margin-bottom: 25px;">Top Campus Recruiters</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 18px; align-items: center;">
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">TCS</div>
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">Infosys</div>
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">Tech Mahindra</div>
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">Capgemini</div>
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">Cognizant</div>
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">Wipro</div>
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">HDFC Bank</div>
-        <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 14px; border-radius: var(--radius-sm); font-weight: 700;">Persistent</div>
+    <!-- ======================================================================
+         12. Campus Gallery
+         ====================================================================== -->
+    <section class="gallery-section section-pad" id="gallery">
+      <div class="container">
+        <div class="section-heading heading-row">
+          <div>
+            <div class="eyebrow">CAMPUS LIFE</div>
+            <h2>Glimpses of <em>SSBT Campus.</em></h2>
+          </div>
+          <p>Experience the scenic 25-acre green environment, modern infrastructure, and vibrant student activities at Bambhori, Jalgaon.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80" alt="SSBT Campus Building" loading="lazy">
+            <figcaption>
+              <strong>Academic Building</strong>
+              <small>Main administrative &amp; lecture halls</small>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80" alt="Computer Laboratory" loading="lazy">
+            <figcaption>
+              <strong>Computer Applications Lab</strong>
+              <small>Equipped with high-speed broadband</small>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80" alt="Classroom Discussion" loading="lazy">
+            <figcaption>
+              <strong>Digital Classrooms</strong>
+              <small>Interactive multimedia learning</small>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80" alt="Student Life and Activities" loading="lazy">
+            <figcaption>
+              <strong>Seminars &amp; Grand Fests</strong>
+              <small>MILESTONE &bull; VASANTOTSAV</small>
+            </figcaption>
+          </figure>
+        </div>
       </div>
-      <div style="margin-top: 35px;">
-        <a href="placements.html" class="btn btn-gold">
-          <i class="fa-solid fa-chart-line"></i> View Detailed Placement Records & Packages
-        </a>
+    </section>
+
+    <!-- ======================================================================
+         13. Closing Call To Action
+         ====================================================================== -->
+    <section class="closing-cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow eyebrow-light">YOUR JOURNEY STARTS HERE</div>
+          <h2>Ready to take the<br><em>next step?</em></h2>
+        </div>
+        <div class="cta-right">
+          <p>Admissions are open for BCA, BBA, B.Sc. Computer Science and other programmes for the academic session 2026-27. Inquire now or visit our Bambhori campus.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="button button-gold open-enquiry-modal">Apply Online <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+            <a href="contact.html" class="button button-outline-light">Visit Campus <i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- ======================================================================
        11. Master Footer
