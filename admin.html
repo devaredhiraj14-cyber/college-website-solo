@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff & Website Administration Dashboard | SSBT ACS College</title>
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    body {
+      background: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+    }
+    .admin-header-bar {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 16px 0;
+      border-bottom: 3px solid #fbbf24;
+    }
+    .admin-header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .admin-brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+    .admin-brand h1 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0;
+    }
+    .admin-brand p {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      margin: 2px 0 0;
+    }
+    .admin-badge-live {
+      background: #10b981;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .admin-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+      padding: 35px 0 60px;
+    }
+    .admin-sidebar {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+    .admin-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      color: var(--slate-dark);
+      font-weight: 600;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #f1f5f9;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .admin-nav-item:hover,
+    .admin-nav-item.active {
+      background: var(--primary-red-light);
+      color: var(--primary-red);
+      border-left: 4px solid var(--primary-red);
+    }
+    .admin-nav-item i {
+      width: 22px;
+      font-size: 1rem;
+    }
+    .counter-pill {
+      background: var(--primary-red);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .admin-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: 30px;
+      margin-bottom: 25px;
+    }
+    .admin-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--royal-navy);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .admin-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .admin-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+    .admin-metric-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .admin-metric-box strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--royal-navy);
+      font-weight: 800;
+    }
+    .admin-metric-box span {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .action-bar-floating {
+      background: #0f172a;
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .faculty-item-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      margin-bottom: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 80px;
+      gap: 12px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .admin-layout {
+        grid-template-columns: 1fr;
+      }
+      .admin-metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .faculty-item-card {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 500px) {
+      .admin-metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Admin Bar -->
+  <header class="admin-header-bar">
+    <div class="container admin-header-inner">
+      <div class="admin-brand">
+        <a href="index.html">
+          <img src="https://sscoetjalgaon.ac.in/public/images/home-page/new-logos/ssacsc.png" alt="SSBT Emblem">
+        </a>
+        <div>
+          <h1>SSBT ACS College — Admin & Staff Control Center</h1>
+          <p>Real-Time Portal Management • Faculty Directory • Live Statistics & Student Leads</p>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span class="admin-badge-live"><i class="fa-solid fa-circle-dot"></i> Live Storage Active</span>
+        <a href="index.html" class="btn btn-gold" style="padding: 6px 14px; font-size: 0.8rem;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> View Public Site
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- Top Action Bar -->
+    <div style="padding-top: 25px;">
+      <div class="action-bar-floating">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-sliders" style="color: #fbbf24; font-size: 1.2rem;"></i>
+          <span style="font-size: 0.9rem; font-weight: 600;">Website Live Sync Engine</span>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button id="save-all-btn" class="btn btn-gold" style="padding: 8px 18px; font-size: 0.85rem;">
+            <i class="fa-solid fa-floppy-disk"></i> Save Changes to Live Website
+          </button>
+          <button id="export-js-btn" class="btn btn-glass" style="padding: 8px 16px; font-size: 0.85rem;">
+            <i class="fa-solid fa-download"></i> Download data.js
+          </button>
+          <button id="reset-default-btn" class="btn btn-glass" style="padding: 8px 16px; font-size: 0.85rem; border-color: rgba(239, 68, 68, 0.5); color: #f87171;">
+            <i class="fa-solid fa-rotate-left"></i> Reset Defaults
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Metrics Strip -->
+    <div class="admin-metric-grid">
+      <div class="admin-metric-box">
+        <strong id="metric-lead-count">0</strong>
+        <span>Student Enquiries Received</span>
+      </div>
+      <div class="admin-metric-box">
+        <strong id="metric-tpo-name">Prof. Aarti Rana</strong>
+        <span>Training & Placement Head</span>
+      </div>
+      <div class="admin-metric-box">
+        <strong id="metric-high-pkg">12.0 LPA</strong>
+        <span>Highest Package Recorded</span>
+      </div>
+      <div class="admin-metric-box">
+        <strong id="metric-students">2,500+</strong>
+        <span>Active Campus Students</span>
+      </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="admin-layout">
+      
+      <!-- Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <div class="admin-nav-item active" data-tab="tab-enquiries">
+          <span><i class="fa-solid fa-inbox"></i> Student Enquiries</span>
+          <span id="sidebar-lead-badge" class="counter-pill">0</span>
+        </div>
+        <div class="admin-nav-item" data-tab="tab-faculty">
+          <span><i class="fa-solid fa-chalkboard-user"></i> Staff & Faculty</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; color: #94a3b8;"></i>
+        </div>
+        <div class="admin-nav-item" data-tab="tab-placement">
+          <span><i class="fa-solid fa-briefcase"></i> T&P Head & Stats</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; color: #94a3b8;"></i>
+        </div>
+        <div class="admin-nav-item" data-tab="tab-stats">
+          <span><i class="fa-solid fa-chart-column"></i> College Statistics</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; color: #94a3b8;"></i>
+        </div>
+        <div class="admin-nav-item" data-tab="tab-notices">
+          <span><i class="fa-solid fa-bullhorn"></i> Notices & Tickers</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; color: #94a3b8;"></i>
+        </div>
+        <div class="admin-nav-item" data-tab="tab-events">
+          <span><i class="fa-solid fa-calendar-star"></i> Events & Fests</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; color: #94a3b8;"></i>
+        </div>
+        <div class="admin-nav-item" data-tab="tab-about">
+          <span><i class="fa-solid fa-landmark"></i> Leadership & Mam Quote</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem; color: #94a3b8;"></i>
+        </div>
+      </aside>
+
+      <!-- Content Panels -->
+      <main class="admin-main">
+
+        <!-- ================================================================
+             Tab 1: Student Enquiries & Real-Time Leads Inbox
+             ================================================================ -->
+        <div id="tab-enquiries" class="admin-tab-content">
+          <div class="admin-card">
+            <div class="admin-card-title">
+              <span><i class="fa-solid fa-inbox" style="color: var(--primary-red);"></i> Real-Time Enquiries & Leads Inbox</span>
+              <div>
+                <button id="test-alert-btn" class="btn btn-gold" style="font-size: 0.78rem; padding: 6px 12px;">
+                  <i class="fa-solid fa-volume-high"></i> Test Sound Alert
+                </button>
+                <button id="export-leads-csv" class="btn btn-glass" style="font-size: 0.78rem; padding: 6px 12px; color: var(--slate-dark); border-color: var(--border-color);">
+                  <i class="fa-solid fa-file-csv"></i> Export CSV
+                </button>
+                <button id="clear-leads-btn" class="btn btn-glass" style="font-size: 0.78rem; padding: 6px 12px; color: #ef4444; border-color: #fca5a5;">
+                  <i class="fa-solid fa-trash"></i> Clear All
+                </button>
+              </div>
+            </div>
+            <p class="admin-card-desc">
+              Incoming admissions forms, event registrations, and contact messages appear here in real-time with automatic audio chime and browser push alerts.
+            </p>
+
+            <div class="data-table-wrapper">
+              <table class="data-table" id="enquiry-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Student Name</th>
+                    <th>Contact</th>
+                    <th>Course / Subject</th>
+                    <th>Notes / Details</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="enquiry-table-body">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+            <div id="no-enquiries-msg" style="text-align: center; padding: 35px 20px; color: var(--text-light); display: none;">
+              <i class="fa-solid fa-folder-open" style="font-size: 2.2rem; color: #cbd5e1; margin-bottom: 10px;"></i>
+              <p>No enquiries received yet. Forms submitted by visitors on the website will instantly appear here!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             Tab 2: Staff & Faculty Management
+             ================================================================ -->
+        <div id="tab-faculty" class="admin-tab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-title">
+              <span><i class="fa-solid fa-chalkboard-user" style="color: var(--primary-red);"></i> Departmental Staff & Faculty</span>
+              <div style="display: flex; gap: 10px;">
+                <select id="faculty-dept-select" class="form-select" style="width: auto; padding: 6px 12px; font-weight: 600;">
+                  <option value="bca">BCA (Computer Applications)</option>
+                  <option value="bba">BBA (Business Admin)</option>
+                  <option value="bsc-cs">B.Sc. Computer Science</option>
+                  <option value="bsc-ds">B.Sc. Data Science</option>
+                </select>
+              </div>
+            </div>
+            <p class="admin-card-desc">
+              Change the names, designations, and qualifications of faculty and Head of Department on will. Changes reflect immediately on <strong>departments.html</strong>.
+            </p>
+
+            <!-- HOD Section -->
+            <div style="background: #fdf8f6; border: 1px solid #fed7aa; border-radius: var(--radius-sm); padding: 20px; margin-bottom: 25px;">
+              <h4 style="color: #78350f; margin-bottom: 12px;"><i class="fa-solid fa-crown"></i> Head of Department (HOD)</h4>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px;">
+                <div class="form-group">
+                  <label class="form-label">HOD Full Name</label>
+                  <input type="text" id="hod-name-input" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Qualifications</label>
+                  <input type="text" id="hod-qual-input" class="form-input">
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 14px;">
+                <div class="form-group">
+                  <label class="form-label">Experience</label>
+                  <input type="text" id="hod-exp-input" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">HOD Message Quote</label>
+                  <input type="text" id="hod-msg-input" class="form-input">
+                </div>
+              </div>
+            </div>
+
+            <!-- Faculty List -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <h4 style="color: var(--royal-navy);"><i class="fa-solid fa-users"></i> Teaching Faculty Members</h4>
+              <button id="add-faculty-btn" class="btn btn-gold" style="font-size: 0.8rem; padding: 6px 14px;">
+                <i class="fa-solid fa-plus"></i> Add Faculty Member
+              </button>
+            </div>
+
+            <div id="faculty-list-container">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             Tab 3: Training & Placement Desk (Prof. Aarti Rana)
+             ================================================================ -->
+        <div id="tab-placement" class="admin-tab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-title">
+              <span><i class="fa-solid fa-briefcase" style="color: var(--primary-red);"></i> Training & Placement Cell (TPO)</span>
+            </div>
+            <p class="admin-card-desc">
+              Manage Placement Head identity, credentials, contact channels, and corporate recruitment records.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label class="form-label">Placement Head Name *</label>
+                <input type="text" id="tpo-name-input" class="form-input" value="Prof. Aarti Rana">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Designation / Role *</label>
+                <input type="text" id="tpo-title-input" class="form-input" value="Head — Training & Placement Cell (T&P Officer)">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label class="form-label">Educational Qualifications</label>
+                <input type="text" id="tpo-qual-input" class="form-input" value="M.Tech (CSE), MBA (HR), Ph.D. Scholar">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Professional Experience</label>
+                <input type="text" id="tpo-exp-input" class="form-input" value="14+ Years Corporate Relations & Employability Training">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label class="form-label">Official TPO Email</label>
+                <input type="email" id="tpo-email-input" class="form-input" value="tpo@ssacscjalgaon.ac.in">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Official Desk Phone / Mobile</label>
+                <input type="text" id="tpo-phone-input" class="form-input" value="0257-2258394 / 9422789123">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label class="form-label">Placement Head Photo URL</label>
+              <input type="text" id="tpo-photo-input" class="form-input" value="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label class="form-label">Placement Head Vision Quote</label>
+              <textarea id="tpo-msg-input" class="form-textarea" rows="3">Our mission is bridging campus talent with premier corporate enterprises. From the first semester, we provide continuous aptitude grooming, full-stack coding bootcamps, and executive interview preparation to ensure high-bracket job placements for BCA, BBA, and B.Sc. students.</textarea>
+            </div>
+
+            <h4 style="color: var(--royal-navy); margin-bottom: 12px;"><i class="fa-solid fa-chart-line"></i> Placement Statistics</h4>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Highest Package</label>
+                <input type="text" id="tpo-high-pkg-input" class="form-input" value="12.0 LPA">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Average Package</label>
+                <input type="text" id="tpo-avg-pkg-input" class="form-input" value="4.20 LPA">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Total Job Offers Released</label>
+                <input type="text" id="tpo-offers-input" class="form-input" value="220+">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             Tab 4: College Key Statistics
+             ================================================================ -->
+        <div id="tab-stats" class="admin-tab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-title">
+              <span><i class="fa-solid fa-chart-column" style="color: var(--primary-red);"></i> College Key Figures & Highlights</span>
+            </div>
+            <p class="admin-card-desc">
+              Change primary metrics shown on the homepage hero, statistics counter, and admissions page at will.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label class="form-label">Active Enrolled Students</label>
+                <input type="text" id="stat-students-input" class="form-input" value="2,500+">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Campus Area</label>
+                <input type="text" id="stat-acres-input" class="form-input" value="25 Acres Sprawling Green Grounds">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label class="form-label">Trust Legacy Years</label>
+                <input type="text" id="stat-legacy-input" class="form-input" value="40+ Years (Established 1983)">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Faculty Count</label>
+                <input type="text" id="stat-faculty-input" class="form-input" value="85+ Experienced Professors">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Highest Placement Package</label>
+                <input type="text" id="stat-pkg-input" class="form-input" value="12.0 LPA">
+              </div>
+              <div class="form-group">
+                <label class="form-label">University Affiliation Status</label>
+                <input type="text" id="stat-affil-input" class="form-input" value="KBC North Maharashtra University (Grade 'A')">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             Tab 5: Notices & News Tickers
+             ================================================================ -->
+        <div id="tab-notices" class="admin-tab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-title">
+              <span><i class="fa-solid fa-bullhorn" style="color: var(--primary-red);"></i> Announcements & Running Tickers</span>
+              <button id="add-notice-btn" class="btn btn-gold" style="font-size: 0.8rem; padding: 6px 14px;">
+                <i class="fa-solid fa-plus"></i> Add New Announcement
+              </button>
+            </div>
+            <p class="admin-card-desc">
+              Manage alerts sliding in the top announcement bar and admissions bulletin board.
+            </p>
+
+            <div id="notice-list-container">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             Tab 6: Events & Fests Manager
+             ================================================================ -->
+        <div id="tab-events" class="admin-tab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-title">
+              <span><i class="fa-solid fa-calendar-star" style="color: var(--primary-red);"></i> College Events & Fests</span>
+              <button id="add-event-btn" class="btn btn-gold" style="font-size: 0.8rem; padding: 6px 14px;">
+                <i class="fa-solid fa-plus"></i> Add New Event
+              </button>
+            </div>
+            <p class="admin-card-desc">
+              Edit national tech fests (MILESTONE), cultural gatherings (VASANTOTSAV), sports meets, and student hackathons.
+            </p>
+
+            <div id="event-list-container">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             Tab 7: Leadership & Founder Quote
+             ================================================================ -->
+        <div id="tab-about" class="admin-tab-content" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-title">
+              <span><i class="fa-solid fa-crown" style="color: var(--primary-red);"></i> Founder Patron: Smt. Pratibha Patil</span>
+            </div>
+            <p class="admin-card-desc">
+              Refined, concise description below President Mam to keep the hero and tribute crisp.
+            </p>
+
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label class="form-label">Inspirational Quote</label>
+              <input type="text" id="founder-quote-input" class="form-input" value="Education is the supreme catalyst to empower rural youth, elevate women, and build a progressive nation.">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label">Concise Biographical Tribute</label>
+              <textarea id="founder-bio-input" class="form-textarea" rows="2">Founder Patron of SSBT (Est. 1983). Champion of rural youth higher education and technological literacy in North Maharashtra.</textarea>
+            </div>
+
+            <h4 style="color: var(--royal-navy); margin-bottom: 12px;"><i class="fa-solid fa-user-tie"></i> Principal: Dr. G. K. Patnaik</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label class="form-label">Principal Name</label>
+                <input type="text" id="principal-name-input" class="form-input" value="Dr. G. K. Patnaik">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Title / Degree</label>
+                <input type="text" id="principal-title-input" class="form-input" value="Principal & Professor | Ph.D. in Computer Science & Engineering">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Principal Desk Message</label>
+              <textarea id="principal-msg-input" class="form-textarea" rows="3">Welcome to SSBT's Arts, Commerce & Science College, Bambhori. We cultivate an ecosystem where academic rigour harmonizes with hands-on technical skills, industry readiness, and high ethical standards.</textarea>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Shared Data Script -->
+  <script src="js/data.js"></script>
+
+  <script>
+    // Tab switching logic
+    document.querySelectorAll('.admin-nav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'));
+        document.querySelectorAll('.admin-tab-content').forEach(c => c.style.display = 'none');
+        item.classList.add('active');
+        const targetId = item.getAttribute('data-tab');
+        const target = document.getElementById(targetId);
+        if (target) target.style.display = 'block';
+      });
+    });
+
+    // Load active data
+    let currentData = (typeof getCollegeData === 'function') ? getCollegeData() : DEFAULT_COLLEGE_DATA;
+
+    // Initialize Dashboard fields
+    function populateAdminUI() {
+      // 1. Placement Head & Stats
+      if (currentData.placement) {
+        document.getElementById('tpo-name-input').value = currentData.placement.head || '';
+        document.getElementById('tpo-title-input').value = currentData.placement.designation || '';
+        document.getElementById('tpo-qual-input').value = currentData.placement.qualification || '';
+        document.getElementById('tpo-exp-input').value = currentData.placement.experience || '';
+        document.getElementById('tpo-email-input').value = currentData.placement.email || '';
+        document.getElementById('tpo-phone-input').value = currentData.placement.phone || '';
+        document.getElementById('tpo-photo-input').value = currentData.placement.photo || '';
+        document.getElementById('tpo-msg-input').value = currentData.placement.message || '';
+        document.getElementById('tpo-high-pkg-input').value = currentData.placement.highestPackage || '12.0 LPA';
+        document.getElementById('tpo-avg-pkg-input').value = currentData.placement.averagePackage || '4.20 LPA';
+        document.getElementById('tpo-offers-input').value = currentData.placement.totalOffers || '220+';
+
+        document.getElementById('metric-tpo-name').textContent = currentData.placement.head || 'Prof. Aarti Rana';
+      }
+
+      // 2. Statistics
+      if (currentData.stats) {
+        document.getElementById('stat-students-input').value = currentData.stats.activeStudents || '';
+        document.getElementById('stat-acres-input').value = currentData.stats.campusAcres || '';
+        document.getElementById('stat-legacy-input').value = currentData.stats.legacyYears || '';
+        document.getElementById('stat-faculty-input').value = currentData.stats.facultyCount || '';
+        document.getElementById('stat-pkg-input').value = currentData.stats.highestPackage || '';
+        document.getElementById('stat-affil-input').value = currentData.stats.naacAffiliation || '';
+
+        document.getElementById('metric-high-pkg').textContent = currentData.stats.highestPackage || '12.0 LPA';
+        document.getElementById('metric-students').textContent = currentData.stats.activeStudents || '2,500+';
+      }
+
+      // 3. Founder & Principal
+      if (currentData.leadership) {
+        document.getElementById('founder-quote-input').value = currentData.leadership.founderQuote || '';
+        document.getElementById('founder-bio-input').value = currentData.leadership.founderBio || '';
+        document.getElementById('principal-name-input').value = currentData.leadership.principal || '';
+        document.getElementById('principal-title-input').value = currentData.leadership.principalTitle || '';
+        document.getElementById('principal-msg-input').value = currentData.leadership.principalQuote || '';
+      }
+
+      // 4. Render Department Staff
+      renderDepartmentFaculty();
+
+      // 5. Render Notices
+      renderNotices();
+
+      // 6. Render Events
+      renderEvents();
+
+      // 7. Render Enquiries Table
+      renderEnquiries();
+    }
+
+    // Render Department Staff
+    const deptSelect = document.getElementById('faculty-dept-select');
+    deptSelect.addEventListener('change', renderDepartmentFaculty);
+
+    function renderDepartmentFaculty() {
+      const deptKey = deptSelect.value;
+      const dept = currentData.departments[deptKey];
+      if (!dept) return;
+
+      document.getElementById('hod-name-input').value = dept.hod.name || '';
+      document.getElementById('hod-qual-input').value = dept.hod.qualification || '';
+      document.getElementById('hod-exp-input').value = dept.hod.experience || '';
+      document.getElementById('hod-msg-input').value = dept.hod.message || '';
+
+      const container = document.getElementById('faculty-list-container');
+      container.innerHTML = '';
+
+      dept.faculty.forEach((fac, idx) => {
+        const item = document.createElement('div');
+        item.className = 'faculty-item-card';
+        item.innerHTML = `
+          <div>
+            <label class="form-label" style="font-size: 0.72rem;">Faculty Name</label>
+            <input type="text" class="form-input fac-name" value="${fac.name}">
+          </div>
+          <div>
+            <label class="form-label" style="font-size: 0.72rem;">Designation</label>
+            <input type="text" class="form-input fac-role" value="${fac.role}">
+          </div>
+          <div>
+            <label class="form-label" style="font-size: 0.72rem;">Qualifications & Exp.</label>
+            <input type="text" class="form-input fac-qual" value="${fac.qual} • ${fac.exp}">
+          </div>
+          <div style="text-align: right; padding-top: 18px;">
+            <button class="btn btn-glass" style="color: #ef4444; border-color: #fca5a5; padding: 6px 10px;" onclick="deleteFaculty(${idx})">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    window.deleteFaculty = function(index) {
+      const deptKey = deptSelect.value;
+      currentData.departments[deptKey].faculty.splice(index, 1);
+      renderDepartmentFaculty();
+    };
+
+    document.getElementById('add-faculty-btn').addEventListener('click', () => {
+      const deptKey = deptSelect.value;
+      currentData.departments[deptKey].faculty.push({
+        name: "New Faculty Member",
+        role: "Assistant Professor",
+        qual: "M.Sc. / M.C.A.",
+        exp: "5 Years"
+      });
+      renderDepartmentFaculty();
+    });
+
+    // Render Notices
+    function renderNotices() {
+      const container = document.getElementById('notice-list-container');
+      container.innerHTML = '';
+      currentData.notices.forEach((n, idx) => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background: #f8fafc; border: 1px solid var(--border-color); border-radius: 6px; padding: 14px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;';
+        div.innerHTML = `
+          <div>
+            <strong style="color: var(--royal-navy);">${n.title}</strong>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 4px;">
+              <span style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">${n.category}</span>
+              ${n.date} ${n.month} • ${n.description}
+            </div>
+          </div>
+          <button class="btn btn-glass" style="color: #ef4444; border-color: #fca5a5; padding: 4px 8px;" onclick="deleteNotice(${idx})">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    window.deleteNotice = function(index) {
+      currentData.notices.splice(index, 1);
+      renderNotices();
+    };
+
+    document.getElementById('add-notice-btn').addEventListener('click', () => {
+      const title = prompt("Enter announcement headline:", "Admissions Counseling Session Active This Saturday");
+      if (title) {
+        currentData.notices.unshift({
+          id: Date.now(),
+          title: title,
+          date: "NEW",
+          month: "ALERT",
+          category: "admission",
+          isNew: true,
+          description: "Counseling team active in seminar hall."
+        });
+        renderNotices();
+      }
+    });
+
+    // Render Events
+    function renderEvents() {
+      const container = document.getElementById('event-list-container');
+      container.innerHTML = '';
+      currentData.events.forEach((ev, idx) => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background: #f8fafc; border: 1px solid var(--border-color); border-radius: 6px; padding: 14px; margin-bottom: 12px;';
+        div.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <strong style="color: var(--royal-navy); font-size: 1rem;">${ev.title}</strong>
+            <span style="background: #fef3c7; color: #b45309; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">${ev.date}</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 8px;">${ev.description}</p>
+          <div style="font-size: 0.8rem; color: var(--primary-red); font-weight: 600;">
+            <i class="fa-solid fa-trophy"></i> ${ev.cashPrize}
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById('add-event-btn').addEventListener('click', () => {
+      const title = prompt("Enter new event title:", "ANNUAL INNOVATION CONCLAVE");
+      if (title) {
+        currentData.events.push({
+          id: "event-" + Date.now(),
+          title: title,
+          category: "technical",
+          date: "Upcoming Session",
+          tagline: "Student Technical Summit",
+          cashPrize: "Prizes & Certificates",
+          photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
+          description: "Inter-collegiate academic presentation and awards conference."
+        });
+        renderEvents();
+      }
+    });
+
+    // Render Enquiries Table
+    function renderEnquiries() {
+      const tbody = document.getElementById('enquiry-table-body');
+      const emptyMsg = document.getElementById('no-enquiries-msg');
+      let raw = localStorage.getItem('SSBT_ENQUIRIES');
+      let enquiries = raw ? JSON.parse(raw) : [];
+
+      document.getElementById('metric-lead-count').textContent = enquiries.length;
+      document.getElementById('sidebar-lead-badge').textContent = enquiries.length;
+
+      if (!enquiries.length) {
+        tbody.innerHTML = '';
+        emptyMsg.style.display = 'block';
+        return;
+      }
+
+      emptyMsg.style.display = 'none';
+      tbody.innerHTML = '';
+
+      enquiries.forEach((item, idx) => {
+        const tr = document.createElement('tr');
+        const waMsg = encodeURIComponent(`Hello ${item.name}, thank you for inquiring about ${item.course} at SSBT ACS College Bambhori! Our admission counseling cell is here to assist you.`);
+        const waUrl = `https://api.whatsapp.com/send?phone=91${item.phone.replace(/[^0-9]/g, '')}&text=${waMsg}`;
+
+        tr.innerHTML = `
+          <td style="font-size: 0.8rem; color: var(--text-light); white-space: nowrap;">${item.timestamp}</td>
+          <td><strong style="color: var(--royal-navy);">${item.name}</strong><br><span style="font-size: 0.75rem; color: #10b981; font-weight: 700;">${item.type || 'Enquiry'}</span></td>
+          <td>
+            <a href="tel:${item.phone}" style="color: var(--royal-navy); font-weight: 600;"><i class="fa-solid fa-phone"></i> ${item.phone}</a><br>
+            <span style="font-size: 0.78rem; color: var(--text-light);">${item.email || 'No Email'}</span>
+          </td>
+          <td><span style="background: var(--primary-red-light); color: var(--primary-red); font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">${item.course}</span></td>
+          <td style="font-size: 0.85rem; max-width: 250px;">${item.message}</td>
+          <td style="white-space: nowrap;">
+            <a href="${waUrl}" target="_blank" class="btn" style="background: #25d366; color: #fff; padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; text-decoration: none;" title="Open WhatsApp Chat">
+              <i class="fa-brands fa-whatsapp"></i> Chat
+            </a>
+            <button class="btn btn-glass" style="color: #ef4444; border-color: #fca5a5; padding: 4px 8px; font-size: 0.75rem;" onclick="deleteEnquiry(${idx})" title="Delete Lead">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.deleteEnquiry = function(index) {
+      let raw = localStorage.getItem('SSBT_ENQUIRIES');
+      let enquiries = raw ? JSON.parse(raw) : [];
+      enquiries.splice(index, 1);
+      localStorage.setItem('SSBT_ENQUIRIES', JSON.stringify(enquiries));
+      renderEnquiries();
+    };
+
+    document.getElementById('clear-leads-btn').addEventListener('click', () => {
+      if (confirm("Are you sure you want to clear all student leads from the inbox?")) {
+        localStorage.removeItem('SSBT_ENQUIRIES');
+        renderEnquiries();
+      }
+    });
+
+    document.getElementById('test-alert-btn').addEventListener('click', () => {
+      // Simulate real-time lead
+      if (typeof recordEnquiry === 'function') {
+        recordEnquiry({
+          name: "Sample Applicant (Pooja Sharma)",
+          phone: "9876543210",
+          email: "pooja.sharma@example.com",
+          course: "BCA (Computer Applications)",
+          message: "12th Percentage: 84.50%",
+          type: "Live Simulation Alert"
+        });
+      } else {
+        alert("Audio & Notification chime active on public pages!");
+      }
+      renderEnquiries();
+    });
+
+    document.getElementById('export-leads-csv').addEventListener('click', () => {
+      let raw = localStorage.getItem('SSBT_ENQUIRIES');
+      let enquiries = raw ? JSON.parse(raw) : [];
+      if (!enquiries.length) {
+        alert("No leads available to export.");
+        return;
+      }
+      let csv = "ID,Timestamp,Name,Phone,Email,Course,Type,Message\n";
+      enquiries.forEach(e => {
+        csv += `"${e.id}","${e.timestamp}","${e.name}","${e.phone}","${e.email}","${e.course}","${e.type}","${e.message.replace(/"/g, '""')}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `SSBT_Leads_${Date.now()}.csv`;
+      a.click();
+    });
+
+    // Save All Changes to Live Website
+    document.getElementById('save-all-btn').addEventListener('click', () => {
+      // 1. Gather TPO
+      currentData.placement.head = document.getElementById('tpo-name-input').value;
+      currentData.placement.designation = document.getElementById('tpo-title-input').value;
+      currentData.placement.qualification = document.getElementById('tpo-qual-input').value;
+      currentData.placement.experience = document.getElementById('tpo-exp-input').value;
+      currentData.placement.email = document.getElementById('tpo-email-input').value;
+      currentData.placement.phone = document.getElementById('tpo-phone-input').value;
+      currentData.placement.photo = document.getElementById('tpo-photo-input').value;
+      currentData.placement.message = document.getElementById('tpo-msg-input').value;
+      currentData.placement.highestPackage = document.getElementById('tpo-high-pkg-input').value;
+      currentData.placement.averagePackage = document.getElementById('tpo-avg-pkg-input').value;
+      currentData.placement.totalOffers = document.getElementById('tpo-offers-input').value;
+
+      // 2. Gather Stats
+      currentData.stats.activeStudents = document.getElementById('stat-students-input').value;
+      currentData.stats.campusAcres = document.getElementById('stat-acres-input').value;
+      currentData.stats.legacyYears = document.getElementById('stat-legacy-input').value;
+      currentData.stats.facultyCount = document.getElementById('stat-faculty-input').value;
+      currentData.stats.highestPackage = document.getElementById('stat-pkg-input').value;
+      currentData.stats.naacAffiliation = document.getElementById('stat-affil-input').value;
+
+      // 3. Gather Leadership
+      currentData.leadership.founderQuote = document.getElementById('founder-quote-input').value;
+      currentData.leadership.founderBio = document.getElementById('founder-bio-input').value;
+      currentData.leadership.principal = document.getElementById('principal-name-input').value;
+      currentData.leadership.principalTitle = document.getElementById('principal-title-input').value;
+      currentData.leadership.principalQuote = document.getElementById('principal-msg-input').value;
+
+      // 4. Gather Current Department HOD
+      const deptKey = deptSelect.value;
+      currentData.departments[deptKey].hod.name = document.getElementById('hod-name-input').value;
+      currentData.departments[deptKey].hod.qualification = document.getElementById('hod-qual-input').value;
+      currentData.departments[deptKey].hod.experience = document.getElementById('hod-exp-input').value;
+      currentData.departments[deptKey].hod.message = document.getElementById('hod-msg-input').value;
+
+      // Gather current faculty inputs
+      const facNames = document.querySelectorAll('.fac-name');
+      const facRoles = document.querySelectorAll('.fac-role');
+      const facQuals = document.querySelectorAll('.fac-qual');
+      currentData.departments[deptKey].faculty = [];
+      facNames.forEach((n, i) => {
+        const parts = facQuals[i].value.split('•');
+        currentData.departments[deptKey].faculty.push({
+          name: n.value,
+          role: facRoles[i].value,
+          qual: parts[0] ? parts[0].trim() : 'M.Sc.',
+          exp: parts[1] ? parts[1].trim() : '5 Years'
+        });
+      });
+
+      // Save to localStorage
+      saveCollegeData(currentData);
+      populateAdminUI();
+
+      alert("🎉 All changes have been saved!\n\nThe live website is instantly updated with your modifications. Refresh any page to see the new staff names and statistics.");
+    });
+
+    // Reset Defaults
+    document.getElementById('reset-default-btn').addEventListener('click', () => {
+      if (confirm("Reset website data back to factory defaults?")) {
+        resetCollegeData();
+        currentData = DEFAULT_COLLEGE_DATA;
+        populateAdminUI();
+        alert("Defaults restored.");
+      }
+    });
+
+    // Download data.js
+    document.getElementById('export-js-btn').addEventListener('click', () => {
+      const code = `/**\n * Centralized Data Store for SSBT Arts, Commerce & Science College Portal\n * (Exported from Admin Dashboard)\n */\n\nconst DEFAULT_COLLEGE_DATA = ${JSON.stringify(currentData, null, 2)};\n\nfunction getCollegeData() {\n  try {\n    const local = localStorage.getItem('SSBT_COLLEGE_DATA');\n    if (local) return Object.assign({}, DEFAULT_COLLEGE_DATA, JSON.parse(local));\n  } catch (err) {}\n  return DEFAULT_COLLEGE_DATA;\n}\n\nfunction saveCollegeData(updatedData) {\n  localStorage.setItem('SSBT_COLLEGE_DATA', JSON.stringify(updatedData));\n}\n\nfunction resetCollegeData() {\n  localStorage.removeItem('SSBT_COLLEGE_DATA');\n}\n\nvar COLLEGE_DATA = getCollegeData();\n`;
+      const blob = new Blob([code], { type: 'text/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'data.js';
+      a.click();
+    });
+
+    // Boot admin
+    populateAdminUI();
+  </script>
+</body>
+</html>

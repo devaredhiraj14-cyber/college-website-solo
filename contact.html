@@ -164,10 +164,50 @@
         </div>
       </div>
 
-      <!-- Map Embed -->
-      <div class="map-wrapper">
+      <!-- Contact Form & Message Section -->
+      <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 30px; box-shadow: var(--shadow-sm);">
+        <span class="section-tag" style="background: var(--primary-red-light); color: var(--primary-red);"><i class="fa-solid fa-paper-plane"></i> Quick Reach</span>
+        <h3 style="font-size: 1.4rem; color: var(--royal-navy); margin-bottom: 15px;">Send an Official Message</h3>
+        <form id="contact-form">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" id="c-name" class="form-input" placeholder="Your full name" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="form-group">
+              <label class="form-label">Mobile Number *</label>
+              <input type="tel" id="c-phone" class="form-input" placeholder="10-digit phone" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email ID</label>
+              <input type="email" id="c-email" class="form-input" placeholder="email@example.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject / Purpose</label>
+            <input type="text" id="c-subject" class="form-input" placeholder="Admission inquiry, verification, or general query" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message Details</label>
+            <textarea id="c-message" class="form-textarea" rows="3" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <i class="fa-solid fa-paper-plane"></i> Submit Message & Alert Admin
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Embed Full Width -->
+  <section style="padding: 0 0 50px;">
+    <div class="container">
+      <div class="map-wrapper" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.897365697241!2d75.50091877479483!3d21.002882980639965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd90f6b3d4f13e5%3A0xe5f867498c4f7a55!2sSSBT&#39;s%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+          width="100%" 
+          height="320" 
+          style="border:0;" 
           allowfullscreen="" 
           loading="lazy">
         </iframe>
@@ -206,9 +246,9 @@
         <div class="dir-card">
           <h4>Training & Placement Cell (T&P)</h4>
           <p>
-            <strong>Head TPO:</strong> Dr. K. S. Wani<br>
-            <strong>Phone:</strong> 0257-2258394<br>
-            <strong>Email:</strong> tpo@sscoetjalgaon.ac.in
+            <strong>Head TPO:</strong> Prof. Aarti Rana<br>
+            <strong>Phone:</strong> 0257-2258394 / 9422789123<br>
+            <strong>Email:</strong> tpo@ssacscjalgaon.ac.in
           </p>
         </div>
 
@@ -274,6 +314,10 @@
           <a href="contact.html">Campus Map & Directions</a>
           <a href="tel:02572258391">0257-2258391 / 93</a>
           <a href="mailto:sscoetjal@gmail.com">sscoetjal@gmail.com</a>
+          <a href="admin.html" style="color: #fbbf24; font-weight: 700; margin-top: 6px;">
+            <i class="fa-solid fa-lock"></i> Staff & Admin Portal 
+            <span class="admin-lead-badge counter-pill" style="display: none; background: #ef4444; color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 10px;">0</span>
+          </a>
         </div>
       </div>
     </div>

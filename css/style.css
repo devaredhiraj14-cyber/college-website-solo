@@ -373,17 +373,54 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   4. Grand Homepage Hero (No enquiry card, pure grandeur & campus beauty)
+   4. Grand Homepage Hero (Center of Attraction with Dynamic Stats)
    -------------------------------------------------------------------------- */
 .grand-hero {
   position: relative;
   min-height: 580px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(139, 0, 0, 0.8)),
-              url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(120, 0, 0, 0.84)),
+              url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   color: #ffffff;
   display: flex;
   align-items: center;
-  padding: 80px 0;
+  padding: 85px 0 95px;
+}
+
+.hero-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-top: 45px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.hero-stat-item {
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-stat-item:last-child {
+  border-right: none;
+}
+
+.hero-stat-item strong {
+  display: block;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #fbbf24;
+}
+
+.hero-stat-item span {
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .grand-hero-content {
@@ -1316,6 +1353,15 @@ button {
   .hero-actions {
     gap: 12px;
   }
+  .hero-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
+    margin-top: 30px;
+  }
+  .hero-stat-item:nth-child(2) {
+    border-right: none;
+  }
 
   /* Dynamic Grids & Content Cards */
   .dept-content-grid {
@@ -1379,6 +1425,18 @@ button {
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
+  }
+  .hero-stats-strip {
+    grid-template-columns: 1fr;
+  }
+  .hero-stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 10px;
+  }
+  .hero-stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
   .dept-nav-pills {
     flex-direction: column;

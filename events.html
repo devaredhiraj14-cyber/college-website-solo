@@ -3,25 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Life, Fests & Grand Celebrations | SSBT ACS College, Bambhori</title>
+  <title>Dedicated Events & Fests Portal | SSBT ACS College, Bambhori</title>
+  
+  <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  
   <style>
+    .event-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .event-filter-btn {
+      padding: 10px 22px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: 30px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--slate-dark);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+    .event-filter-btn:hover,
+    .event-filter-btn.active {
+      background: var(--primary-red);
+      color: #ffffff;
+      border-color: var(--primary-red);
+      box-shadow: 0 4px 14px rgba(139, 0, 0, 0.25);
+    }
     .event-detail-section {
-      padding: 70px 0;
+      padding: 60px 0;
       border-bottom: 1px solid var(--border-color);
     }
     .event-detail-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 45px;
       align-items: center;
     }
     .event-detail-grid.reverse {
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.85fr 1.15fr;
     }
     .event-gallery-grid {
       display: grid;
@@ -43,7 +76,7 @@
       transition: transform 0.4s ease;
     }
     .gallery-thumb:hover img {
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
     .gallery-label {
       position: absolute;
@@ -51,10 +84,22 @@
       left: 0;
       width: 100%;
       padding: 12px;
-      background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
+      background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
       color: #ffffff;
       font-size: 0.85rem;
       font-weight: 600;
+    }
+    .club-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .club-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
     @media (max-width: 1024px) {
       .event-detail-grid,
@@ -80,7 +125,7 @@
       <div class="top-ticker">
         <span class="ticker-label"><i class="fa-solid fa-bullhorn"></i> Fest Alert</span>
         <div class="ticker-text">
-          Registrations for "MILESTONE 2026" National Tech Fest Open Soon! • Grand Annual Gathering "VASANTOTSAV" Dates Announced!
+          Registrations for "MILESTONE 2026" National Tech Fest Open Soon! • Annual Gathering "VASANTOTSAV" Dates Announced!
         </div>
       </div>
       <div class="top-quick-links">
@@ -136,8 +181,8 @@
   <!-- Page Banner -->
   <div class="page-banner">
     <div class="container">
-      <span class="section-tag" style="background: rgba(251, 191, 36, 0.2); color: #fde68a;">Vibrant Student Life</span>
-      <h1>Grand Fests, Celebrations & Campus Culture</h1>
+      <span class="section-tag" style="background: rgba(251, 191, 36, 0.2); color: #fde68a;">Official Events Portal</span>
+      <h1>Grand Fests, Celebrations & Campus Life</h1>
       <p>Discover our iconic national tech carnivals, multi-day cultural gatherings, athletic championships, and creative student societies.</p>
       <div class="breadcrumb">
         <a href="index.html">Home</a> <span>/</span> <span>Campus Life & Fests</span>
@@ -145,18 +190,33 @@
     </div>
   </div>
 
+  <!-- Dedicated Events Filter Strip -->
+  <section class="section-padding" style="background: #ffffff; padding-bottom: 20px;">
+    <div class="container">
+      <div class="event-filter-bar">
+        <button class="event-filter-btn active" data-cat="all"><i class="fa-solid fa-list-check"></i> All Fests & Gatherings</button>
+        <button class="event-filter-btn" data-cat="technical"><i class="fa-solid fa-laptop-code"></i> Technical Fests</button>
+        <button class="event-filter-btn" data-cat="cultural"><i class="fa-solid fa-masks-theater"></i> Cultural Carnivals</button>
+        <button class="event-filter-btn" data-cat="sports"><i class="fa-solid fa-trophy"></i> Sports Championships</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Event 1: MILESTONE National Tech Fest -->
-  <section class="event-detail-section" id="milestone" style="background: #ffffff;">
+  <section class="event-detail-section event-card-item" data-cat="technical" id="milestone" style="background: #ffffff;">
     <div class="container event-detail-grid">
       <div>
-        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Annual National Tech Carnival</span>
-        <h2 style="font-size: 2.2rem; color: var(--royal-navy); margin-bottom: 14px;">"MILESTONE" National Technical Symposium</h2>
-        <p style="font-size: 0.98rem; color: var(--text-main); line-height: 1.8; margin-bottom: 18px;">
-          <strong>MILESTONE</strong> is SSBT's flagship national-level technical extravaganza that brings together more than 3,000+ enthusiastic participants from premier universities across India. Spanning two high-octane days, students battle in cutting-edge coding competitions, build autonomous robotic machines, solve industry problems, and present innovative research papers before panels of corporate judges.
+        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Flagship National Event</span>
+        <h2 style="font-size: 2.2rem; color: var(--royal-navy); margin-bottom: 8px;">"MILESTONE 2026" National Tech Symposium</h2>
+        <span style="display: inline-block; background: #fef3c7; color: #b45309; font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;">
+          <i class="fa-solid fa-calendar-days"></i> February 18–19, 2026 • Cash Pool: ₹1,50,000+
+        </span>
+        <p style="font-size: 0.98rem; color: var(--text-main); line-height: 1.8; margin-bottom: 20px;">
+          <strong>MILESTONE</strong> is SSBT's signature national-level technical extravaganza bringing together 3,000+ enthusiastic participants from premier universities across India. Spanning two high-octane days, students battle in 24H hackathons, robotics arena races, web sprints, and present research papers before corporate executives.
         </p>
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px;">
           <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 12px 16px; border-radius: var(--radius-sm);">
-            <strong style="color: var(--royal-navy); display: block;"><i class="fa-solid fa-laptop-code" style="color: var(--primary-red);"></i> 24-Hour Code-a-Thon</strong>
+            <strong style="color: var(--royal-navy); display: block;"><i class="fa-solid fa-code" style="color: var(--primary-red);"></i> 24-Hour Code-a-Thon</strong>
             <span style="font-size: 0.82rem; color: var(--text-light);">Full stack web & mobile app building</span>
           </div>
           <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 12px 16px; border-radius: var(--radius-sm);">
@@ -168,10 +228,13 @@
             <span style="font-size: 0.82rem; color: var(--text-light);">Valorant, BGMI & FIFA tournaments</span>
           </div>
           <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 12px 16px; border-radius: var(--radius-sm);">
-            <strong style="color: var(--royal-navy); display: block;"><i class="fa-solid fa-award" style="color: var(--primary-red);"></i> ₹1,50,000+ Cash Pool</strong>
-            <span style="font-size: 0.82rem; color: var(--text-light);">Trophies, certificates & corporate prizes</span>
+            <strong style="color: var(--royal-navy); display: block;"><i class="fa-solid fa-trophy" style="color: var(--primary-red);"></i> ₹1,50,000+ Cash Pool</strong>
+            <span style="font-size: 0.82rem; color: var(--text-light);">Trophies, certificates & internship offers</span>
           </div>
         </div>
+        <button class="btn btn-gold open-event-reg-modal" data-event="MILESTONE 2026 Tech Fest">
+          <i class="fa-solid fa-ticket"></i> Register for MILESTONE 2026
+        </button>
       </div>
       <div>
         <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" 
@@ -182,7 +245,7 @@
   </section>
 
   <!-- Event 2: VASANTOTSAV Mega Cultural Gathering -->
-  <section class="event-detail-section" id="vasantotsav" style="background: #fdf8f6;">
+  <section class="event-detail-section event-card-item" data-cat="cultural" id="vasantotsav" style="background: #fdf8f6;">
     <div class="container event-detail-grid reverse">
       <div>
         <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80" 
@@ -191,42 +254,51 @@
       </div>
       <div>
         <span class="section-tag" style="background: #fef3c7; color: #b45309;"><i class="fa-solid fa-masks-theater"></i> Mega 3-Day Cultural Extravaganza</span>
-        <h2 style="font-size: 2.2rem; color: var(--royal-navy); margin-bottom: 14px;">"VASANTOTSAV" Annual Gathering</h2>
-        <p style="font-size: 0.98rem; color: var(--text-main); line-height: 1.8; margin-bottom: 18px;">
-          Held every winter in our open-air amphitheatre, <strong>VASANTOTSAV</strong> is the ultimate celebration of student music, theatrical talent, classical art, and dance. The festival features high-voltage performances, celebrity musical concerts, traditional Maharashtrian cultural pageants (Lavani, Powada), fashion shows, and pulse-pounding DJ nights that create memories for a lifetime.
+        <h2 style="font-size: 2.2rem; color: var(--royal-navy); margin-bottom: 8px;">"VASANTOTSAV" Annual Gathering</h2>
+        <span style="display: inline-block; background: #fee2e2; color: #991b1b; font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;">
+          <i class="fa-solid fa-calendar-days"></i> March 5–7, 2026 • Open Air Amphitheatre
+        </span>
+        <p style="font-size: 0.98rem; color: var(--text-main); line-height: 1.8; margin-bottom: 20px;">
+          Held in our open-air amphitheatre under the stars, <strong>VASANTOTSAV</strong> is the ultimate celebration of student music, theatrical talent, traditional Maharashtrian cultural pageants (Lavani, Powada), fashion shows, and pulse-pounding EDM DJ concert nights.
         </p>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px;">
           <div style="background: #ffffff; border: 1px solid #fed7aa; padding: 12px 16px; border-radius: var(--radius-sm);">
             <strong style="color: #78350f; display: block;"><i class="fa-solid fa-guitar" style="color: #f59e0b;"></i> Celebrity Live Concert</strong>
-            <span style="font-size: 0.82rem; color: var(--text-light);">Renowned singers & Bollywood stars</span>
+            <span style="font-size: 0.82rem; color: var(--text-light);">Renowned singers & Bollywood guests</span>
           </div>
           <div style="background: #ffffff; border: 1px solid #fed7aa; padding: 12px 16px; border-radius: var(--radius-sm);">
             <strong style="color: #78350f; display: block;"><i class="fa-solid fa-person-burst" style="color: #f59e0b;"></i> Inter-College Dance Battles</strong>
             <span style="font-size: 0.82rem; color: var(--text-light);">Solo, duet & mega group choreographies</span>
           </div>
           <div style="background: #ffffff; border: 1px solid #fed7aa; padding: 12px 16px; border-radius: var(--radius-sm);">
-            <strong style="color: #78350f; display: block;"><i class="fa-solid fa-vest" style="color: #f59e0b;"></i> Traditional & Fashion Gala</strong>
-            <span style="font-size: 0.82rem; color: var(--text-light);">Celebrating diversity & Indian heritage</span>
+            <strong style="color: #78350f; display: block;"><i class="fa-solid fa-vest" style="color: #f59e0b;"></i> Traditional Heritage Gala</strong>
+            <span style="font-size: 0.82rem; color: var(--text-light);">Celebrating diversity & Maharashtra folk</span>
           </div>
           <div style="background: #ffffff; border: 1px solid #fed7aa; padding: 12px 16px; border-radius: var(--radius-sm);">
             <strong style="color: #78350f; display: block;"><i class="fa-solid fa-headphones" style="color: #f59e0b;"></i> High-Energy DJ Night</strong>
-            <span style="font-size: 0.82rem; color: var(--text-light);">State-of-the-art concert sound & lighting</span>
+            <span style="font-size: 0.82rem; color: var(--text-light);">Concert sound systems & laser lighting</span>
           </div>
         </div>
+        <button class="btn btn-gold open-event-reg-modal" data-event="VASANTOTSAV Cultural Gala">
+          <i class="fa-solid fa-ticket"></i> Register for Cultural Events
+        </button>
       </div>
     </div>
   </section>
 
   <!-- Event 3: KHEL-MAHOTSAV Sports Gala -->
-  <section class="event-detail-section" id="sports" style="background: #ffffff;">
+  <section class="event-detail-section event-card-item" data-cat="sports" id="sports" style="background: #ffffff;">
     <div class="container event-detail-grid">
       <div>
         <span class="section-tag" style="background: #ecfdf5; color: #047857;"><i class="fa-solid fa-volleyball"></i> Athletic Excellence</span>
-        <h2 style="font-size: 2.2rem; color: var(--royal-navy); margin-bottom: 14px;">"KHEL-MAHOTSAV" Annual Sports Week</h2>
-        <p style="font-size: 0.98rem; color: var(--text-main); line-height: 1.8; margin-bottom: 18px;">
-          Spanning across our 25-acre green grounds, <strong>KHEL-MAHOTSAV</strong> tests endurance, team spirit, and sportsmanship. With full-sized cricket pitches, volleyball courts, basketball arenas, running tracks, and an indoor gymkhana, students participate passionately in inter-branch tournaments with enthusiastic cheering crowds.
+        <h2 style="font-size: 2.2rem; color: var(--royal-navy); margin-bottom: 8px;">"KHEL-MAHOTSAV" Annual Sports Meet</h2>
+        <span style="display: inline-block; background: #d1fae5; color: #065f46; font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;">
+          <i class="fa-solid fa-calendar-days"></i> January 12–16, 2026 • 25-Acre Sports Arena
+        </span>
+        <p style="font-size: 0.98rem; color: var(--text-main); line-height: 1.8; margin-bottom: 20px;">
+          Spanning across our 25-acre green grounds, <strong>KHEL-MAHOTSAV</strong> tests endurance, team spirit, and sportsmanship. With full-sized floodlight cricket pitches, volleyball courts, basketball arenas, running tracks, and an indoor gymkhana, students participate passionately in inter-branch tournaments with enthusiastic cheering crowds.
         </p>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px;">
           <div style="background: #f8fafc; border: 1px solid #a7f3d0; padding: 12px 16px; border-radius: var(--radius-sm);">
             <strong style="color: #064e3b; display: block;"><i class="fa-solid fa-baseball-bat-ball" style="color: #10b981;"></i> Floodlight Cricket Cup</strong>
             <span style="font-size: 0.82rem; color: var(--text-light);">T20 inter-departmental championship</span>
@@ -244,6 +316,9 @@
             <span style="font-size: 0.82rem; color: var(--text-light);">Badminton, Table Tennis & Chess</span>
           </div>
         </div>
+        <button class="btn btn-gold open-event-reg-modal" data-event="KHEL-MAHOTSAV Sports Meet">
+          <i class="fa-solid fa-ticket"></i> Register Team for Sports
+        </button>
       </div>
       <div>
         <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" 
@@ -253,60 +328,168 @@
     </div>
   </section>
 
-  <!-- Photo Gallery Showcase -->
-  <section class="section-padding" style="background: #f8fafc;">
+  <!-- Event 4: CYBER-QUEST 24H Hackathon -->
+  <section class="event-detail-section event-card-item" data-cat="technical" id="hackathon" style="background: #f8fafc;">
+    <div class="container event-detail-grid reverse">
+      <div>
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" 
+             alt="Students Collaborating at Hackathon" 
+             style="width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+      </div>
+      <div>
+        <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> 24-Hour Codefest</span>
+        <h2 style="font-size: 2.2rem; color: var(--royal-navy); margin-bottom: 8px;">"CYBER-QUEST" National Hackathon</h2>
+        <span style="display: inline-block; background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;">
+          <i class="fa-solid fa-calendar-days"></i> December 22–23, 2026 • High-GPU Computer Labs
+        </span>
+        <p style="font-size: 0.98rem; color: var(--text-main); line-height: 1.8; margin-bottom: 20px;">
+          A non-stop 24-hour coding sprint where student developers from BCA, BBA, and B.Sc. streams solve real-world industry challenges across Artificial Intelligence, Web3, FinTech, and Smart Agriculture. Mentored by senior tech engineers with immediate internship offers for winning teams.
+        </p>
+        <button class="btn btn-gold open-event-reg-modal" data-event="CYBER-QUEST Hackathon">
+          <i class="fa-solid fa-ticket"></i> Register Team for Hackathon
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Clubs & Societies -->
+  <section class="section-padding" style="background: #ffffff; border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-camera"></i> Visual Memories</span>
+        <span class="section-tag">Student Empowerment</span>
+        <h2>Active Campus Clubs & Societies</h2>
+        <p>Beyond academics, our student-led committees foster teamwork, leadership, and public relations.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="club-card">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #fee2e2; color: #b91c1c; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px;">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h4 style="font-size: 1.15rem; color: var(--royal-navy); margin-bottom: 6px;">ACM & CSI Tech Chapter</h4>
+          <p style="font-size: 0.88rem; color: var(--text-light); line-height: 1.6;">Coding challenges, Linux workshops, open-source sprints, and peer programming sessions held weekly.</p>
+        </div>
+
+        <div class="club-card">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #fef3c7; color: #b45309; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px;">
+            <i class="fa-solid fa-masks-theater"></i>
+          </div>
+          <h4 style="font-size: 1.15rem; color: var(--royal-navy); margin-bottom: 6px;">Shram Sadhana Cultural Troupe</h4>
+          <p style="font-size: 0.88rem; color: var(--text-light); line-height: 1.6;">Theatre, Street Play (Nukkad Natak), classical vocals, and choreography preparing for youth festivals.</p>
+        </div>
+
+        <div class="club-card">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #d1fae5; color: #047857; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px;">
+            <i class="fa-solid fa-hands-holding-child"></i>
+          </div>
+          <h4 style="font-size: 1.15rem; color: var(--royal-navy); margin-bottom: 6px;">NSS & Social Outreach Wing</h4>
+          <p style="font-size: 0.88rem; color: var(--text-light); line-height: 1.6;">Tree plantation drives, rural blood donation camps, digital literacy rallies, and community development.</p>
+        </div>
+
+        <div class="club-card">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #e0f2fe; color: #0369a1; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px;">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h4 style="font-size: 1.15rem; color: var(--royal-navy); margin-bottom: 6px;">Sports Gymkhana Council</h4>
+          <p style="font-size: 0.88rem; color: var(--text-light); line-height: 1.6;">Organizing seasonal floodlight leagues, inter-collegiate tournaments, and daily training sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section-padding" style="background: #f8fafc; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Campus Memories</span>
         <h2>Moments of Glory & Joy</h2>
-        <p>A peek into the dynamic energy, competitions, and friendships made on the SSBT Bambhori campus.</p>
+        <p>A glimpse into our lively student life, celebrations, and award podiums.</p>
       </div>
 
       <div class="event-gallery-grid">
         <div class="gallery-thumb">
           <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Concert Stage">
-          <div class="gallery-label">Musical Concert Night at Amphitheatre</div>
+          <div class="gallery-label">Live Concert Night at Vasantotsav</div>
         </div>
         <div class="gallery-thumb">
           <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Robotics Workshop">
-          <div class="gallery-label">Robotics & Autonomous Arena Battle</div>
+          <div class="gallery-label">Milestone National Robotics Arena</div>
         </div>
         <div class="gallery-thumb">
           <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80" alt="Auditorium Guest Lecture">
-          <div class="gallery-label">Distinguished Keynote in 1000-Seater Auditorium</div>
+          <div class="gallery-label">National Symposium Keynote Address</div>
         </div>
         <div class="gallery-thumb">
           <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80" alt="Cricket Match">
-          <div class="gallery-label">Inter-Departmental Cricket Trophy Final</div>
+          <div class="gallery-label">Inter-Branch Floodlight Cricket Match</div>
         </div>
         <div class="gallery-thumb">
           <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Tech Conference">
-          <div class="gallery-label">AI & Web Development Student Hackathon</div>
+          <div class="gallery-label">Hackathon Jury Evaluation Session</div>
         </div>
         <div class="gallery-thumb">
           <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Students Gathering">
-          <div class="gallery-label">Graduation Day & Alumni Homecoming</div>
+          <div class="gallery-label">Student Farewell & Prize Distribution</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Event Registration Modal -->
+  <div id="event-reg-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button id="close-event-reg-modal" class="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span class="section-tag">Fest Participation Portal</span>
+        <h3 style="font-size: 1.4rem; color: var(--royal-navy);">Online Event Registration</h3>
+        <p style="font-size: 0.85rem; color: var(--text-light);">Register your team or solo entry. Confirmation will be sent via SMS / WhatsApp.</p>
+      </div>
+      <form id="event-reg-form">
+        <div class="form-group">
+          <label class="form-label">Selected Event *</label>
+          <input type="text" id="ev-event-name" class="form-input" readonly style="background: #f1f5f9; font-weight: 700; color: var(--primary-red);">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Team Leader / Participant Full Name *</label>
+          <input type="text" id="ev-name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label class="form-label">WhatsApp Mobile Number *</label>
+            <input type="tel" id="ev-phone" class="form-input" placeholder="10-digit number" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email ID</label>
+            <input type="email" id="ev-email" class="form-input" placeholder="student@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">College / Institute Name *</label>
+          <input type="text" id="ev-college" class="form-input" placeholder="e.g. SSBT ACS College / KBCNMU" required>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <i class="fa-solid fa-circle-check"></i> Confirm Event Registration
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Master Footer -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-col">
         <h4>SSBT ACS College</h4>
-        <p>Founded in 1983 under the patronship of Hon'ble Former President of India Smt. Pratibha Devisingh Patil. Affiliated to KBC North Maharashtra University.</p>
+        <p>Founded under the patronship of Hon'ble Former President of India Smt. Pratibha Devisingh Patil. Affiliated to KBC North Maharashtra University.</p>
         <p style="font-size: 0.82rem; color: #94a3b8;"><strong>DTE: 5125 | AISHE: C-8924</strong></p>
       </div>
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4>Quick Links</h4>
         <div class="footer-links">
           <a href="index.html">Home</a>
-          <a href="about.html">About SSBT & Founder</a>
           <a href="departments.html">Departments</a>
           <a href="events.html">Campus Life & Fests</a>
-          <a href="admissions.html">Admissions 2026</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="placements.html">Placements</a>
         </div>
       </div>
       <div class="footer-col">
@@ -314,15 +497,19 @@
         <div class="footer-links">
           <a href="compliance.html#anti-ragging">Anti-Ragging Squad (1800-180-5522)</a>
           <a href="compliance.html#icc">ICC / Women's Cell</a>
-          <a href="compliance.html#grievance">Online Grievance Redressal</a>
+          <a href="compliance.html#grievance">Grievance Redressal</a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Contact Desk</h4>
+        <h4>Events Helpdesk</h4>
         <div class="footer-links">
-          <a href="contact.html">Campus Map & Directions</a>
-          <a href="tel:02572258391">0257-2258391 / 93</a>
-          <a href="mailto:sscoetjal@gmail.com">sscoetjal@gmail.com</a>
+          <a href="mailto:events@ssacscjalgaon.ac.in">events@ssacscjalgaon.ac.in</a>
+          <a href="tel:02572258391">0257-2258391 (Ext. 104)</a>
+          <a href="contact.html">Campus Directions</a>
+          <a href="admin.html" style="color: #fbbf24; font-weight: 700; margin-top: 6px;">
+            <i class="fa-solid fa-lock"></i> Staff & Admin Portal 
+            <span class="admin-lead-badge counter-pill" style="display: none; background: #ef4444; color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 10px;">0</span>
+          </a>
         </div>
       </div>
     </div>
